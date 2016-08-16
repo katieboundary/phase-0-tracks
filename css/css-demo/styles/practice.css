@@ -12,3 +12,8 @@ section.job{
 section.job ul {
 	font-size: 0.8em;
 }
+
+.job:first-of-type h3::after{
+	content: ' (Current)';
+	font-weight: 600;
+}
