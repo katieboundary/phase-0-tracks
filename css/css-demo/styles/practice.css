@@ -17,3 +17,7 @@ section.job ul {
 	content: ' (Current)';
 	font-weight: 600;
 }
+
+ul li{
+	color: red;
+}
