@@ -39,21 +39,31 @@ employees.times do
 		insurance = false
 	end
 
-	puts age, garlic, insurance, name 
+	allergies = false
+	allergies_str = ''
+	until allergies_str == 'done' ||  allergies_str == "sunshine"
+		puts "List allergies one at a time. When you are done entering allergies, type 'done'."
+		allergies_str = gets.chomp
+		if allergies_str == "sunshine"
+			allergies = true
+		end
+	end
+
+	#puts [age, garlic, insurance, name].to_s
 	if !name
 		puts "Definitely a vampire"
+	elsif allergies
+		puts "Probably a vampire"
 	elsif age && garlic && insurance 
 		puts "Probably not a vampire."
 	elsif !age && !garlic && !insurance
 		puts "Almost certainly a vampire"
 	elsif !insurance || (!age && !garlic)
 		puts "Probably a vampire"
-	# elsif !age && !garlic && !insurance
-	# 	puts "Almost certainly a vampire"
-	# elsif !name
-	# 	puts "Definitely a vampire"
 	else
 		puts "Results inconclusive"
 	end
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 	
