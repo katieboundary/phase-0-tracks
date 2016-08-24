@@ -1,4 +1,8 @@
-puts "What is your name?"
+puts "How many employees would you like to process?"
+employees = gets.chomp.to_i
+employees.times do
+
+	puts "What is your name?"
 	name = gets.chomp
 	if name == "Drake Cula"
 		name = false
@@ -8,17 +12,18 @@ puts "What is your name?"
 		name =true
 	end
 
-puts "How old are you?"
+	puts "How old are you?"
 	age = gets.chomp
-puts "What year were you born?"
+
+	puts "What year were you born?"
 	dob = gets.chomp.to_i
 	if (Time.now.year - dob) != age.to_i
 		age = false
 	else
 		age = true
 	end
-		
-puts "Our company cafeteria serves garlic bread. Should we order some for you?(yes/no)"
+			
+	puts "Our company cafeteria serves garlic bread. Should we order some for you?(yes/no)"
 	garlic = gets.chomp
 	if garlic == "yes"
 		garlic = true
@@ -26,7 +31,7 @@ puts "Our company cafeteria serves garlic bread. Should we order some for you?(y
 		garlic = false
 	end
 
-puts "Would you like to enroll in the company's health insurance?(yes/no)"
+	puts "Would you like to enroll in the company's health insurance?(yes/no)"
 	insurance = gets.chomp
 	if insurance == "yes"
 		insurance = true
@@ -34,21 +39,21 @@ puts "Would you like to enroll in the company's health insurance?(yes/no)"
 		insurance = false
 	end
 
-puts age, garlic, insurance, name 
-if !name
-	puts "Definitely a vampire"
-elsif age && garlic && insurance 
-	puts "Probably not a vampire."
-elsif !age && !garlic && !insurance
-	puts "Almost certainly a vampire"
-elsif !insurance || (!age && !garlic)
-	puts "Probably a vampire"
-# elsif !age && !garlic && !insurance
-# 	puts "Almost certainly a vampire"
-# elsif !name
-# 	puts "Definitely a vampire"
-else
-	puts "Results inconclusive"
+	puts age, garlic, insurance, name 
+	if !name
+		puts "Definitely a vampire"
+	elsif age && garlic && insurance 
+		puts "Probably not a vampire."
+	elsif !age && !garlic && !insurance
+		puts "Almost certainly a vampire"
+	elsif !insurance || (!age && !garlic)
+		puts "Probably a vampire"
+	# elsif !age && !garlic && !insurance
+	# 	puts "Almost certainly a vampire"
+	# elsif !name
+	# 	puts "Definitely a vampire"
+	else
+		puts "Results inconclusive"
+	end
 end
-	
 	
