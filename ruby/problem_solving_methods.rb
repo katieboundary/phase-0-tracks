@@ -1,3 +1,4 @@
+#Paired with Timothy Tao
 # Release 0
 
 def search_array(arr, x)
