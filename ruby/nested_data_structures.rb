@@ -13,7 +13,7 @@ freeway = {
 		names_of_passengers: ["Dracula", "Nosferatu", "Hubert", "Brunhilda"]
 	},
 
-	hond_crx:{
+	honda_crx:{
 		seat_info: {total_seats: 2, seats_available: 1},
 
 		names_of_passengers: ["Han Solo"]
@@ -21,4 +21,10 @@ freeway = {
 
 }
 
-p freeway
+#p freeway
+
+p freeway[:honda_civic][:seat_info][:total_seats]
+
+p freeway[:toyota_corolla][:names_of_passengers][2]
+
+p freeway[:honda_crx][:names_of_passengers][0]
