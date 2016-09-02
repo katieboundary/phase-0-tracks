@@ -85,21 +85,25 @@ puts "After"
 p new_numbers
 
 #hash
-#doesn't work????? >>>>>>>>>> why >>>>>>>>>>>>>>>>>>
-# numbers = { "a" => 5, "b" => 10, "c" => 15}
-# numbers.select! {|letter, number| letter > "a"}
-# # numbers.select! {|letter, number| number < 10}
 
-
-
-# p numbers
+numbers = { "a" => 5, "b" => 10, "c" => 15}
+numbers.select! {|letter, number| letter > "a"}
+numbers.select! {|letter, number| number < 10}
+p numbers
 
 # A method that will remove items from a data structure 
 #until the condition in the block evaluates to false, 
 #then stops (you may not find a perfectly working option 
 #for the hash, and that's okay).
-#### >>>>>>>>>>>>> doesn't run program in CI. does work IRB>>>>>
-# [1, 2].empty? #doesn't return boolean in subl
+
+#array
+
+[1, 2].empty?
 
 #hash
-#### .rehash?>>>>>>>>>>>>>> would this work??
+
+n1 = {"a" => 3, "b" => 8, "c" => 2}
+n2 = {"b" => 8, "c" =>1, "a" =>3}
+
+n1 == n2
+
