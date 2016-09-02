@@ -13,16 +13,14 @@ arr = [5, 12, 9, 20]
 # Release 1 - Fibonacci
 
 def fibonacci( n )
-	fib = [0, 1]
-    (2..n).each do |n|
-    next_fib = fib[ n - 1 ] + fib[ n - 2 ]
-    fib.push(next_fib)
-	end
-	fib.delete_at(-1)
-	p fib
+  fib = [0, 1]
+    (2...n).each do |n|
+      next_fib = fib[ n - 1 ] + fib[ n - 2 ]
+      fib.push(next_fib)
+  end
+  p fib
 end 
 fibonacci( 6 )
-# => [0, 1, 1, 2, 3, 5, 8]
 
 
 
