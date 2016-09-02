@@ -1,14 +1,11 @@
+#Paired with Maggie Dorsey Middleton
+
 def hi_there
 	puts "Hi!"
 	yield("Maggie", "Katie")
 end
 
 hi_there { |name1, name2| puts "Hey good work #{name1} and #{name2}"}
-
-#first attempt didn't work . did on line 13
-# dogs = []
-# dogs << "trig", "pugs", "stella", "chauncey"
-# p dogs
 
 # #array.each
 dogs = ["trig", "pugs", "stella", "chauncey"]
