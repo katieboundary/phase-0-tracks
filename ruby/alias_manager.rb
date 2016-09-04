@@ -8,17 +8,19 @@
 
 # "first last".split.each_slice(1).map{|a|a.join ''}
 
-puts "What is your first and last name?"
-real_name = gets.chomp.downcase
+#puts "What is your first and last name?"
+# real_name = gets.chomp.downcase
 
 #p new_string = str.split('').reverse
 
-p reverse_name = real_name.reverse
+# p reverse_name = real_name.reverse
 
 def rotate_your_vowel(char)
 	vowels = "aeiou"
 	i = vowels.index(char)
-	if i == 4
+	if !i
+		return nil
+	elsif i == 4
 		i = 0
 	else
 		i += 1
@@ -27,27 +29,39 @@ def rotate_your_vowel(char)
 end
 
 
-def rotate_your_consonant (char)
+def rotate_your_consonant(char)
 	consonants = "bcdfghjklmnpqrstvwxyz"
-	if consonants.index(char) == 20
-		index(char) = 0
+	i = consonants.index(char)
+	if !i
+		return nil
+	elsif i == 20
+		i = 0
 	else
-		index(char) + 1 
+		i += 1 
 	end
+	consonants[i]
 end
 
 
-def change_name (name)
+def change_name(reverse_name)
 	char_index = 0
 	new_name = ""
-	while char_index < phrase.length
-		new_name << rotate_your_vowel(name[char_index])
+	while char_index < reverse_name.length
+		char = reverse_name[char_index]
+		new_name << (rotate_your_vowel(char)|| rotate_your_consonant(char) || char)
 		char_index += 1
 	end
 	new_name
+
 end
 
-
+loop do 
+	puts "Enter your first and last name or type 'q' to quit."
+	real_name = gets.chomp.downcase
+	break if real_name == "q"
+	p reverse_name = real_name.split.reverse.join(' ')
+	puts change_name(reverse_name)
+end
 # or make into an array.rotate(
 
 
