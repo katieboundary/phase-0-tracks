@@ -42,7 +42,7 @@ class Cat
   end 
 
   def human_to_catyrs(int)
-  	4 * int
+  	puts 4 * int
   end 
 
   def purr
@@ -60,9 +60,10 @@ cat_array = []
 	  cat_array << cat
 	end 
 	p cat_array
-	
+
 	cat_array.each do |cat|
 		cat.purr
+		cat.human_to_catyrs(3)
 	end
 	
 	
