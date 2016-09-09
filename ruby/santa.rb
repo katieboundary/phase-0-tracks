@@ -31,12 +31,16 @@ class Santa
 		@ethnicity
 	end
 
-	# def celebrate_age=(new_age)
-	# 	@age + 1 = new_age
-	# end
+	def celebrate_age=(new_age)
+		@age = new_age
+	end
 
 	# def get_mad_at=(reindeer)
 	# 	@reindeer.rotate(1) = reindeer
+	# end
+
+	# def get_mad_at=(reindeer)
+	# 	@reindeer = reindeer
 	# end
 
 	def gender=(new_gender)
@@ -59,6 +63,8 @@ example_genders.length.times do |i|
 # puts "Is #{santa.age} years old and their ethnicity is #{santa.ethnicity}"
 # p santa.get_mad_at
 p santa.gender = "I'm a dude now!"
+#p santa.celebrate_age = "weee"
+# p santa.get_mad_at = @reindeer.rotate(1)
 end
 
 #Release 1 - empty array filled with santa instances:
