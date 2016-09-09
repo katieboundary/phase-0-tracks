@@ -1,7 +1,14 @@
-class Santa
-
-	def initialize
+class Santa	
+	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance ..."
+		@gender = gender
+		@ethnicity = ethnicity
+		p @gender
+		p @ethnicity
+		@reindeer = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		p @reindeer
+		@age = 0
+		p @age
 	end
 
 	def speak
@@ -12,10 +19,18 @@ class Santa
 		"That was a good #{cookie}"
 	end
 
+	def set_ethnicity(ethnicity)
+		@ethnicity = ethnicity
+	end
+
 
 end
 
-santa = Santa.new
+santa = Santa.new("Female", "Portuguese")
 p santa.speak
 p santa.eat_milk_and_cookies("snickerdoodle")
+
+
+
+
 
