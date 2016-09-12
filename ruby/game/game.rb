@@ -68,9 +68,7 @@ class Game
 			guessed_letters << letter
 		end
 
-		if word.include?(letter)
-		
-		else
+		if !word.include?(letter)
 			puts "Sorry, guess again."
 		end
 
@@ -89,8 +87,6 @@ class Game
 		end
 	end
 
-	def win_lose
-	end
 
 end
 
