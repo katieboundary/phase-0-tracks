@@ -1,13 +1,15 @@
-#Take in player one input (player two look away!). Don't print out what they entered. Can I hide what they entered? 
-#input: string, convert into array?
-#output:nothing or take up space to remove the word from the screen?
-#Tell player two how many guesses they have. (number of guesses is related to the length of the word.LENGTH)
-#output:string
+
+#Pseudocode:
+#Take in player one input. Iterate through the word and replace with a dash. 
 #Show how many letters are in the word "_ _ _ _"
-#input:string, convert into array? Only take in one character?
-#output:"_ ..." /or "Guess again"
-#Repeated guesses don't count against them (IF user input is equal previous input then counter does not decrease)
+#Calculate how many guesses can be made based on length of word plus 3.
+#Output dashed version of word that shows how many letters are there to guess.
+#Tell player two to guess one letter. If correct, display correct letter with dashes for remaining letters.
 #When the user guesses a correct letter, it will fill. "a _ _ _"
+#store all guessed letters in an array
+#If they guess the same letter twice, tell them.
+#When the guess count is maxed out, tell them they lose and end the game.
+#If they guess the word, congratulate them and end the game.
 #input: string
 #output: see above
 #Give a congratulatory message upon winning and a taunting message if they lose.
@@ -15,49 +17,100 @@
 
 class Game
 
-	attr_accessor :word, :display_word, :total_guesses
+	attr_accessor :word, :display_word, :guessed_letters
 
 	def initialize(word)
-		# @guess_count = 0
-		# @game_over = false
-		@word = word
-		# @total_guesses = word.length + 3
-		# @guessed_letters = []
-
+		self.word = word
+		self.guessed_letters = []
 	end
+
+	def self.play_game
+		puts "Player one, Type in a word."
+		word = gets.chomp
+		game = Game.new(word)
+		p game.word_display
+		p game.number_of_guesses
+
+		loop do 
+			puts "Enter your guess (letter)."
+			letter = gets.chomp 
+			game.guessed_array(letter)
+			p game.word_display
+			break if game.win_or_lose
+		end
+	end
+
+
+	def number_of_guesses
+		word.length + 3
+	end
+
 
 	def word_display
 		display_word = ""
-		word.length.times do 
-			display_word << "-"
+		word.each_char do |l|
+			if guessed_letters.include? l
+				display_word << l
+			else
+				display_word << "-"
+			end
+
 		end
+
 		return display_word
 	end
 
-	def number_of_guesses
-		total_guesses = word.length + 3
-		return total_guesses
+
+	def guessed_array(letter)
+		if guessed_letters.include?(letter)
+			puts "Sorry, you already guessed that."
+		else
+			guessed_letters << letter
+		end
+
+		if word.include?(letter)
+		
+		else
+			puts "Sorry, guess again."
+		end
+
 	end
 
-	#when guess_count == total guesses
-		#end game
-	#guess_count += 1
-	#word.include?(guessed_letter)
-	#if 
+	def guess_count
+		guessed_letters.size
+	end
 
+	def win_or_lose
+		if guess_count == number_of_guesses
+			p "Too many guesses. Game over"
+		elsif word_display == word
+			p "Congratulations! You win!"
+			
+		end
+	end
 
-
-	# def include?(char)
-
-	# end
-
+	def win_lose
+	end
 
 end
 
-game = Game.new("tree")
-p game.word_display
-p game.number_of_guesses
-#puts "you have # guesses. Guess a character."
+
+Game.play_game
+
+
+#Driver Code
+# game = Game.new("tree")
+# p game.word_display
+# p game.number_of_guesses
+
+# loop do 
+# 	puts "Enter your guess (letter)."
+# 	letter = gets.chomp 
+# 	game.guessed_array(letter)
+# 	p game.word_display
+# 	break if game.win_or_lose
+# end
+
 
 
 
