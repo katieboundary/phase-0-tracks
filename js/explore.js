@@ -13,6 +13,12 @@ function reverseString(str) {
 }
 
 //Driver code:
-console.log(reverseString('hello'));
+// console.log(reverseString('hello'));
+
+var result = reverseString('hello');
+
+if (1==1){
+	console.log(result);
+}
 
 
