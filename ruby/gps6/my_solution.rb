@@ -4,25 +4,25 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+#Ruby will include the file that's named in require_relative. Will go directly to that file.
+#Require will also include a file in another file but will search the path. It has different syntax.
 require_relative 'state_data'
 
 class VirusPredictor
-
+  #Set the instance variables upon creating a new instance. Sets values of population_density, population, and state_of_origin. Stores them.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-
+  #Dispatches other methods. Is currently called in driver code with new instances.
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
   private
-
+  #Takes in three variables predicts the number of deaths of a state dependant on their density and population. Prints info as a string with interpolation.
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -40,7 +40,7 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
-
+  #Takes in two arguments and sets speed of outbreak based off of population density. Outputs info into a string using interpolation.
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -81,6 +81,14 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+
+# p alaska = VirusPredictor.new(state_of_origin, STATE_DATA) 
+
+#Release 4 implement a new feature attempts
+# STATE_DATA.each do |i|
+# STATE_DATA.each do |state, density, population|
+#   VirusPredictor.new(@state, )
+end
 
 
 #=======================================================================
