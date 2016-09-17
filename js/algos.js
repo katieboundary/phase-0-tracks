@@ -36,13 +36,21 @@ var info2 = {name: "Tamir", age: 54};
 var moreInfo = {name: "Jill", age: 32};
 var moreInfo2 = {name: "Hank", age: 87};
 
-function matchingPairs(hash1, hash2){
-	for (var i = 0; i )
+function matchingPairs(a, b){
+	for(var key in a) {
+		if (a[key] == b[key]){
+			return true;
+		}
+	}
+	return false;	
 }
 
 
+//Driver Code:
 //Release 0 call: 
-console.log(longestWord(words));
+// console.log(longestWord(words));
+console.log(matchingPairs(info, info2));
+console.log(matchingPairs(moreInfo2, moreInfo));
 
 
 
