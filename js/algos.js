@@ -46,11 +46,51 @@ function matchingPairs(a, b){
 }
 
 
+//Release 2 part 1:
+
+//Function that akes integer for length
+//builds and returns array of strings of the given length. 
+//example, given an argument of 3 it would return three random words in an array.
+//word length range is from 1-10 letters
+//look up generating a random number(for the word length?)
+
+
+
+function randomWords(num){
+	//take in number and create that many words (times?) Loop through that many times
+	//generate random number for the length of each word between 1 and 10
+	//load completed word into the array and continue the next iteration/loop
+	//return completed array
+	var wordArray = [];
+	var letters = "abcdefghijklmnopqrstuvwxyz";
+	//Generate num words
+	for (var i = 0; i < num; i++) {
+		var string = "";
+		// Generates random string length
+		var stringLength = Math.floor((Math.random() * 10) + 1);
+		//Generates a string of stringLength
+		for (var j = 0; j < stringLength; j++) {
+			string += letters.charAt(Math.floor(Math.random() * letters.length));
+		}
+		wordArray.push(string);
+	}
+	return wordArray;
+	
+}
+
+
+console.log(randomWords(3));
+
 //Driver Code:
 //Release 0 call: 
 // console.log(longestWord(words));
-console.log(matchingPairs(info, info2));
-console.log(matchingPairs(moreInfo2, moreInfo));
+
+//Release 1 calls:
+// console.log(matchingPairs(info, info2));
+// console.log(matchingPairs(moreInfo2, moreInfo));
+
+//Release 2 call:
+
 
 
 
