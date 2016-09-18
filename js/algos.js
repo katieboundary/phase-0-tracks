@@ -9,7 +9,7 @@
 //will return "longest phrase"
 
 //Given array for release 0 commented out to run release 2 part 2.
-// var words = ["long phrase", "longest phrase", "longer phrase"];
+var words = ["long phrase", "longest phrase", "longer phrase"];
 	
 function longestWord(array){
 	var longest = "";
@@ -86,14 +86,14 @@ function randomWords(num){
 
 //Driver Code:
 //Release 0 call: 
-// console.log(longestWord(words));
+console.log(longestWord(words));
 
 //Release 1 calls:
-// console.log(matchingPairs(info, info2));
-// console.log(matchingPairs(moreInfo2, moreInfo));
+console.log(matchingPairs(info, info2));
+console.log(matchingPairs(moreInfo2, moreInfo));
 
 //Release 2 part one call:
-// console.log(randomWords(3));
+console.log(randomWords(3));
 
 //Release 2 part two call:
 var times = 10;
