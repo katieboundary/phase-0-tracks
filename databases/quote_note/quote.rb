@@ -42,10 +42,13 @@ loop do
 	date = gets.chomp
 
 	
-	p quote_info(db, name, quote, date)
-
+	quote_info(db, name, quote, date)
 
 	rows = db.execute("SELECT * FROM quote_notes")
+
+	puts "Here are some quotes of note:"
+	
+	#iterate through rows array and interpolate values to display nicely.
 	rows.each do |id, name, quote, date|
 		puts "'#{quote}' - #{name} #{date}"
 	end
