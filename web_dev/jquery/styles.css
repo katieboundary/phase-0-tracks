@@ -1,0 +1,35 @@
+body{
+	background-color: #e3e8e8;
+	font-family: Arial;
+	margin: auto;
+	text-align: center;
+	color: #394646;
+}
+
+#melt{
+	color:#ff8080;
+}
+
+#picture{
+	position: relative;
+
+}
+
+#fun{
+	color:#ff8080;
+}
+
+#facts{
+	font-size: 18px;
+	text-align: center;
+}
+
+footer{
+	font-size: 12px;
+	padding-top:10px;
+	padding-bottom: 10px;
+	background-color: #506262;
+	color: #e3e8e8;
+}
+
+
