@@ -4,4 +4,12 @@ $(function(){
     });
 });
 
+$(function(){
+	$("#fun").mouseout(function(){
+		$("#facts").animate({
+            opacity: '0.5',
+		})
+
+	});
+});
 
