@@ -18,7 +18,7 @@ get '/students/new' do
   erb :new_student
 end
 
-get '/students/campus' do
+get '/campus' do
   erb :campus
 end
 
