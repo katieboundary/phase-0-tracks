@@ -14,5 +14,13 @@
       <li><%= student['name'] %>, <%= student['age'] %></li>
     <% end %>
   </ul>
+
+  <ul>
+    <% @campus.each do |student| %>
+      <li><%= student['name'] %>, <%= student['campus'] %>, <% student['review'] %></li>
+    <% end %>
+  </ul>
+
+
 </body>
 </html>
